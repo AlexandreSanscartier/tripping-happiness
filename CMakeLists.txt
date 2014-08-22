@@ -9,4 +9,4 @@ SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${CLANG_COMPILE_FLAGS}" )
 #Find all cpp files recursively
 file(GLOB_RECURSE SRC "src" "src/*.cpp")
 
-add_executable(bin/interceptor ${SRC})
+add_executable(bin/tripping ${SRC})
