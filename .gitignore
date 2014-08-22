@@ -22,7 +22,14 @@ qrc_*.cpp
 ui_*.h
 Makefile*
 *-build-*
+bin/
 
 # QtCreator
-
 *.autosave
+
+#Cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+Project.cbp
