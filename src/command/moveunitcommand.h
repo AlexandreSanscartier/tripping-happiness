@@ -1,8 +1,8 @@
 #ifndef MOVEUNITCOMMAND_H
+#include "command.h"
+#include "../unit.h"
 #define MOVEUNITCOMMAND_H
 
-#include "command.h"
-#include "unit.h"
 
 class MoveUnitCommand : public Command
 {
