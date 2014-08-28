@@ -5,7 +5,7 @@ Unit::Unit()
 }
 
 Unit::Unit(int x, int y) {
-    x_ = x;
+	x_ = x;
     y_ = y;
 }
 

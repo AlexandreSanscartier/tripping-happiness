@@ -11,6 +11,7 @@ public:
 
 	Unit* getUnit() { return _unit; }
 	void setUnit(Unit* u);
+	void unsetUnit();
 
 private:
 	char _symbol;

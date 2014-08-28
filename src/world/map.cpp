@@ -5,6 +5,17 @@ Map::Map(int width, int height) {
 	this->_height = height;
 }
 
+/**
+ * Take the x and y coordinates and give the appropriate Tile*
+ * @param x the x coordinate on the map of the Tile*
+ * @param y the y coordinate on the map of the Tile*
+ * @return A pointer to the desired Tile
+ */
+Tile* Map::getTileAt(int x, int y) {
+	int pos = (y * _width) + x;
+	return _tiles[pos];
+}
+
 void Map::generateMap() {
 
 	int vectorSize = _width * _height;

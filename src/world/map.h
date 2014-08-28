@@ -23,6 +23,7 @@ public:
     int getHeight() { return _height; }
     int getWidth() { return _width; }
 
+    Tile* getTileAt(int x, int y);
     tile_vec getTiles() { return _tiles; }
 
 
