@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include "unit.h"
 #include "world/map.h"
 #include "command/moveunitcommand.h"
@@ -11,12 +12,12 @@ void updateMap(Map* m, Unit* u, MoveUnitCommand* moveUnitCommand) {
 	m->getTileAt(u->getX(), u->getY())->setUnit(u);
 }
 
-int main()
-{
+void mapTest() {
 	Map* m = new Map(20,8);
 	m->generateMap();
 
 	Unit* u = new Unit(6,4);
+	u->setSymbol('H');
 
 	bool exit = false;
 	string choice;
@@ -33,6 +34,8 @@ int main()
 				moveUnitCommand = new MoveUnitCommand(u, 0, -1);
 				updateMap(m, u, moveUnitCommand);
 				delete moveUnitCommand;
+			} else {
+				cout << "Error: Can not move up border reached!" << endl;
 			}
 		}
 		else if(choice == "down") {
@@ -40,6 +43,8 @@ int main()
 				moveUnitCommand = new MoveUnitCommand(u, 0, 1);
 				updateMap(m, u, moveUnitCommand);
 				delete moveUnitCommand;
+			} else {
+				cout << "Error: Can not move down border reached!" << endl;
 			}
 		}
 		else if (choice == "left") {
@@ -47,6 +52,8 @@ int main()
 				moveUnitCommand = new MoveUnitCommand(u, -1, 0);
 				updateMap(m, u, moveUnitCommand);
 				delete moveUnitCommand;
+			} else {
+				cout << "Error: Can not move left border reached!" << endl;
 			}
 		}
 		else if (choice == "right") {
@@ -54,6 +61,8 @@ int main()
 				moveUnitCommand = new MoveUnitCommand(u, 1, 0);
 				updateMap(m, u, moveUnitCommand);
 				delete moveUnitCommand;
+			} else {
+				cout << "Error: Can not move right border reached!" << endl;
 			}
 		}
 		else if(choice == "exit" || choice == "quit") {
@@ -63,25 +72,14 @@ int main()
 		m->printMap();
 	}
 
+	delete m;
+	delete u;
+
 	cout << "Program Ending....!" << endl;
+}
 
-	/*
-    m->getTileAt(u->getX(), u->getY())->setUnit(u);
-
-    m->printMap();
-
-    m->getTileAt(u->getX(), u->getY())->unsetUnit();
-
-    cout << "Original Unit Position : (" << u->getX() << "," << u->getY() << ")" << endl;
-
-    MoveUnitCommand* moveUnitCommand = new MoveUnitCommand(u, 7, 1);
-    moveUnitCommand->execute();
-
-    m->getTileAt(u->getX(), u->getY())->setUnit(u);
-
-    m->printMap();
-
-    cout << "After Move Unit Position : (" << u->getX() << "," << u->getY() << ")" << endl;
-	 */
+int main()
+{
+	mapTest();
 	return 0;
 }

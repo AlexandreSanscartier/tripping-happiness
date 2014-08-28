@@ -12,7 +12,7 @@ class Map
 public:
 	Map();
 	Map(int width, int height);
-    ~Map() {}
+    ~Map();
 
     void generateMap(); //For now let the map generate itself
     void printMap(); //For now let the map print itself as a String

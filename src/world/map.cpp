@@ -5,6 +5,12 @@ Map::Map(int width, int height) {
 	this->_height = height;
 }
 
+Map::~Map() {
+	for(int i = 0; (unsigned)i < this->_tiles.size(); i++) {
+		delete _tiles[i];
+	}
+}
+
 /**
  * Take the x and y coordinates and give the appropriate Tile*
  * @param x the x coordinate on the map of the Tile*
@@ -38,7 +44,7 @@ void Map::printMap() {
 		for(int j = 0; j < _width; j++) {
 			pos = (i * _width) + j;
 			if(_tiles[pos]->getUnit())
-				std::cout << 'A';
+				std::cout << _tiles[pos]->getUnit()->getSymbol();
 			else
 				std::cout << _tiles[pos]->getSymbol();
 		}

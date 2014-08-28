@@ -14,11 +14,15 @@ public:
     int getY() { return y_; }
     void setY( int y ) { y_ = y; }
 
+    char getSymbol() { return symbol_; }
+    void setSymbol(char s) { symbol_ = s; }
+
     void moveTo( int x, int y );
 
 
 private:
     int x_, y_;
+    char symbol_;
 };
 
 
